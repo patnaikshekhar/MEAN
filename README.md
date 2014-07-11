@@ -6,26 +6,30 @@
 
 **Usage**
 
-1. Install Node
+* Install Node
 ```bash
 $ brew install node
 ```
-2. Install Express
+* Install Express
 ```bash
 $ npm -g install express
 ```
-3. Clone the repository
+* Clone the repository
 ```bash
 $ git clone https://github.com/patnaikshekhar/MEAN.git
 ```
-4. Install the dependencies
+* Install the dependencies
 ```bash
 $ npm install
 ```
-5. Configure the database (Mongo)
+* Configure the database (Mongo)
 
 Change the following line in database.js to point to your database
 
 ```javascript
 var URL = 'mongodb://localhost/MEAN';
+```
+* Start the server
+```bash
+$ npm start
 ```
