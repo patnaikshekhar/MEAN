@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+var debug = require('debug')('MEAN');
+var app = require('../app');
+var database = require('../database.js');
+
+app.set('port', process.env.PORT || 3000);
+
+// Start the server after the database is connected
+database.connect(function(err) {
+
+  if (err) {
+    throw err;
+  }
+
+  var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + server.address().port);
+  });
+});
+

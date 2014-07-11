@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Mean">
+  <head>
+    <title>MEAN</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>MEAN Stack</h1>
+
+    <div ng-controller="myController">
+      <input type="text" placeholder="email" ng-model="email" />
+      <input type="password" placeholder="password" ng-model="password" />
+      <button ng-click="create()">Create</button>
+      <table>
+        <th>
+          <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th></th>
+          </tr>
+          <tr ng-repeat="user in users">
+            <td><input ng-model="user.email" type="text" id="emailInput{{ $index }}"/></td>
+            <td><input ng-model="user.password" type="text" id="passwordInput{{ $index }}"/></td>
+            <td><button ng-click="update($index)">Update</button></td>
+            <td><button ng-click="delete($index)">Delete</button></td>
+          </tr>
+        </ul>
+      </table>
+    </div>
+
+    <script src="/lib/angular/angular.min.js"></script>
+
+    <script src="/javascripts/modules/mongo.js"></script>
+    <script src="/javascripts/modules/app.js"></script>
+  </body>
+</html>
