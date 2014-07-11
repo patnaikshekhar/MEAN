@@ -1,5 +1,5 @@
 var connection = null;
-var URL = 'mongodb://localhost/vaporizer';
+var URL = 'mongodb://localhost/MEAN';
 
 var MongoClient = require('mongodb').MongoClient;
 
