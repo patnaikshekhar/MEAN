@@ -2,6 +2,8 @@ var mongo = angular.module('Mongo', []);
 
 mongo.service('mongo', function($http) {
 
+  var socket = io();
+
   this.insert = function(collection, object, callback) {
     $http.post('/database/insert', {
       collection: collection,

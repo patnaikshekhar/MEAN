@@ -11,6 +11,9 @@
 
     <div ng-view></div>
 
+    <!-- Including socket io -->
+    <script src="/lib/socket.io-client/socket.io.js"></script>
+
     <!-- Including Angular and Dependencies -->
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-route/angular-route.min.js"></script>

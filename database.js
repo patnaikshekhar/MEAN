@@ -1,6 +1,7 @@
 var connection = null;
 var URL = 'mongodb://localhost/MEAN';
 
+var io = null;
 var MongoClient = require('mongodb').MongoClient;
 
 module.exports = {
@@ -45,6 +46,14 @@ module.exports = {
   remove: function (collection, search, done) {
     connection.collection(collection).remove(search, function(err, result) {
       done(err, result);
+    });
+  },
+
+  setSocket: function (ioConnection) {
+    io = ioConnection;
+
+    io.on('connection', function (socket){
+      console.log('a user connected');
     });
   }
 };

@@ -3,7 +3,12 @@ var debug = require('debug')('MEAN');
 var app = require('../app');
 var database = require('../database.js');
 
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 app.set('port', process.env.PORT || 3000);
+
+database.setSocket(io);
 
 // Start the server after the database is connected
 database.connect(function(err) {

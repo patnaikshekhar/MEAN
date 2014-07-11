@@ -14,7 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "~1.2.19"
+    "angular-route": "~1.2.19",
+    "socket.io-client": "~1.0.6"
   },
   "homepage": "https://github.com/patnaikshekhar/MEAN"
 }
