@@ -13,7 +13,7 @@ app.controller('myController', function($scope, mongo) {
     mongo.find(collection, {}, function(data) {
       $scope.users = data;
     });
-  };
+  }
 
 
   $scope.create = function() {
@@ -24,14 +24,14 @@ app.controller('myController', function($scope, mongo) {
   };
 
   $scope.update = function(index) {
-    mongo.update(collection, { "email": $scope.users[index].email }, {
+    mongo.update(collection, { 'email': $scope.users[index].email }, {
       'email': $scope.users[index].email,
       'password': $scope.users[index].password
     }, {}, function() {});
   };
 
   $scope.delete = function(index) {
-    mongo.remove(collection, { "email": $scope.users[index].email }, function() {});
+    mongo.remove(collection, { 'email': $scope.users[index].email }, function() {});
   };
 
   init();
