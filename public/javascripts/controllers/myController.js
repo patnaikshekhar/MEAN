@@ -9,7 +9,7 @@ app.controller('myController', function($scope, mongo) {
   }
 
 
-  function refresh(result) {
+  function refresh() {
     mongo.find(collection, {}, function(data) {
       $scope.users = data;
     });

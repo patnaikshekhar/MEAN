@@ -1,4 +1,4 @@
-var app = angular.module('Mean', ['ngRoute', 'Mongo']);
+var app = angular.module('Mean', ['ngRoute', 'Mongo', 'ui.bootstrap']);
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider

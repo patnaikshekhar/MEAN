@@ -4,6 +4,10 @@
     <title>MEAN</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
+    <!-- Bootstrap Styles -->
+    <link rel='stylesheet' href='/lib/bootstrap-css/css/bootstrap.min.css' />
+
+    <!-- Project css -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -17,6 +21,10 @@
     <!-- Including Angular and Dependencies -->
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-route/angular-route.min.js"></script>
+
+    <!-- Including Angular UI Bootstrap -->
+    <script src="/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
     <!-- Including Mongo Library and Service -->
     <script src="/javascripts/modules/mongo.js"></script>
