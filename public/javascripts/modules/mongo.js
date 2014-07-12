@@ -47,4 +47,10 @@ mongo.service('mongo', function($http) {
       search: search
     }).success(function(data) { callback(data.result); });
   };
+
+  this.follow = function(collection, callback) {
+    socket.on('refresh-' + collection, function(msg) {
+      callback();
+    });
+  };
 });

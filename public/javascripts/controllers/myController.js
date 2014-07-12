@@ -4,6 +4,7 @@ app.controller('myController', function($scope, mongo) {
 
   function init() {
     $scope.users = [];
+    mongo.follow(collection, refresh);
     refresh();
   }
 
@@ -19,18 +20,18 @@ app.controller('myController', function($scope, mongo) {
     mongo.insert(collection, {
       email: $scope.email,
       password: $scope.password
-    }, refresh);
+    }, function() {});
   };
 
   $scope.update = function(index) {
     mongo.update(collection, { "email": $scope.users[index].email }, {
       'email': $scope.users[index].email,
       'password': $scope.users[index].password
-    }, {}, refresh);
+    }, {}, function() {});
   };
 
   $scope.delete = function(index) {
-    mongo.remove(collection, { "email": $scope.users[index].email }, refresh);
+    mongo.remove(collection, { "email": $scope.users[index].email }, function() {});
   };
 
   init();

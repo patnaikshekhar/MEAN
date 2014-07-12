@@ -4,6 +4,10 @@ var URL = 'mongodb://localhost/MEAN';
 var io = null;
 var MongoClient = require('mongodb').MongoClient;
 
+function updateFollowers (collection) {
+  io.emit('refresh-' + collection, { for: 'everyone' });
+}
+
 module.exports = {
 
   connect: function (cb) {
@@ -16,6 +20,7 @@ module.exports = {
   insert: function (collection, object, done) {
     connection.collection(collection).insert(object, function(err, result) {
       done(err, result);
+      updateFollowers(collection);
     });
   },
 
@@ -34,26 +39,29 @@ module.exports = {
   update: function (collection, search, update, options, done) {
     connection.collection(collection).update(search, update, options, function(err, result) {
       done(err, result);
+      updateFollowers(collection);
     });
   },
 
   save: function (collection, object, done) {
     connection.collection(collection).save(object, function(err, result) {
       done(err, result);
+      updateFollowers(collection);
     });
   },
 
   remove: function (collection, search, done) {
     connection.collection(collection).remove(search, function(err, result) {
       done(err, result);
+      updateFollowers(collection);
     });
   },
 
   setSocket: function (ioConnection) {
     io = ioConnection;
 
-    io.on('connection', function (socket){
-      console.log('a user connected');
+    io.on('connection', function (socket) {
+      console.log("Connected");
     });
   }
 };
